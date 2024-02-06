@@ -12,8 +12,8 @@ interface Data {
     data?: any;
 }
 
-function prepareSheets() {
-    const auth = new google.auth.GoogleAuth({
+async function prepareSheets() {
+    const auth = await new google.auth.GoogleAuth({
         credentials: {
             client_email: process.env.GOOGLE_CLIENT_EMAIL,
             private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
@@ -26,7 +26,7 @@ function prepareSheets() {
             'https://www.googleapis.com/auth/spreadsheets.readonly',
         ]
     });
-    const sheets = google.sheets({
+    const sheets = await google.sheets({
         auth,
         version: 'v4',
     });
@@ -36,7 +36,7 @@ function prepareSheets() {
 export async function POST(request: NextRequest, res: Response) {
     const body = await request.json() as SheetForm;
     try {
-        const sheets = prepareSheets();
+        const sheets = await prepareSheets();
         const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
             range: 'A1:B1',
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest, res: Response) {
 
 export async function GET(request: NextRequest) {
     try {
-        const sheets = prepareSheets();
+        const sheets = await prepareSheets();
         const response = await sheets.spreadsheets.values.get({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
             range: 'A2:B100'
