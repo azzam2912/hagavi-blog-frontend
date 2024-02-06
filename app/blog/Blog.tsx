@@ -8,8 +8,8 @@ interface BlogProps {
 export default function Blog({ posts }: BlogProps) {
   return (
     <div className="p-4 w-full">
-      {posts.toReversed().map((post, index) => (
-        <PostCard key={index} post={post} />
+      {posts.map((_, index, arr) => (
+        <PostCard key={index} post={posts[arr.length - index - 1]} />
       ))}
     </div>
   );
