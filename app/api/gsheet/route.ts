@@ -12,11 +12,15 @@ interface Data {
     data?: any;
 }
 
+const credential = JSON.parse(
+    Buffer.from(process.env.GOOGLE_SERVICE_KEY, "base64").toString().replace(/\n/g,"")
+)
+
 async function prepareSheets() {
     const auth = await new google.auth.GoogleAuth({
         credentials: {
-            client_email: process.env.GOOGLE_CLIENT_EMAIL,
-            private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+            client_email: credential.client_email,
+            private_key: credential.private_key
         },
         scopes: [
             'https://www.googleapis.com/auth/drive',
