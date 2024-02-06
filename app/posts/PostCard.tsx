@@ -9,14 +9,14 @@ export interface Post {
 }
 
 interface PostCardProps {
-    post: Post;
+    post: string[];
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return (
-    <div className="border border-gray-300 p-4 rounded-md">
-      <h2 className="text-xl font-bold">{post.title}</h2>
-      <p>{post.content}</p>
+    <div className="flex flex-col items-center m-4 p-1 border border-gray-300 p-4 rounded-md">
+      <h2 className="text-xl font-bold">{post[0]}</h2>
+      <p className="whitespace-pre-wrap">{post[1]}</p>
     </div>
   );
 };
