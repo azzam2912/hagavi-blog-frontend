@@ -13,7 +13,7 @@ interface Data {
 }
 
 const credential = JSON.parse(
-    Buffer.from(process.env.GOOGLE_SERVICE_KEY as string, "base64").toString().replace(/\n/g,"")
+    Buffer.from(process.env.GOOGLE_SERVICE_KEY as string, "base64").toString()
 )
 
 async function prepareSheets() {
