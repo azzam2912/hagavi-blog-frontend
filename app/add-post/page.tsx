@@ -35,6 +35,8 @@ const AddPostPage = () => {
             alert("Post has been added to sheetrange " + result.data.tableRange);
         } catch(err) {
             console.error(err);
+            alert("Error, cannot add post: " + err);
+            return;
         }
         setTitle("");
         setContent("");
