@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "hagavi-blog",
+  "private_key_id": "e3ff46f2518c245a046e1eec9916f0e2a0c84b65",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDCdk/otaLn26ul\ngUtNctQ9KOMznqd0qdl1OYxy5xzw/ZdBGkRKwCtQ71ZPIA4jfD0vJfiF6XIjitGj\naP4KxDhHRtbzcYQkVvis55uO7lwa2xqW1q8A1DqNX9/WFBiNCmCG/4Ru3Q8m8XK7\ng8+TiRUsZhX7tQ7J8RC63uKc7aP2aCH8vuaFpVUXCyGfuOD8EGE/ygVKyRR2F3U4\nakaUbIgF48mjKBTyxkmudbdkLnnJgdUzB+fbH7skyUVASeRSx0N5iCT/2xpT8fEQ\n5tbvNzAjitcEx0U9VK3Xg3IkpQbBjPcoymLkcq/ryPYyJMbIBeaOD+cd/ku1EGst\nX9Y9b0cxAgMBAAECggEAAOEg16IxpkeGqVESPnuLVOr5Sw+XvYXynS55UYA0z+yv\nqUxVfHqNv5gTfXhdRAEQ9ESBURa3DMzZCZqFEpakVAMwn+l2oeTwSzThbdYrXbY5\nsq6uHCx5hs/lDt5opYOjX9zqNAelJMWRAaLVFptXOIwOI6UkF9rymsu8/d1vwUKh\nhbOFqiQw6sTcn3fMcQ2yz75Msml/VmV5bJQ06NrI+6bzmV7o2q35Nw4RERG5ywYV\ndxx0SN5wyGZ9n+7UbsOUjbsVwuiWHqEUfHkLr1hW2/mDijNqONvlLgZPQimuYDh4\nGSHuYFJscJX18L4cw5fVJp2DNb/ALDL+Nvy71mSPQQKBgQDwJdWkFOxAK2X9CopW\nJ0yb/i9WoB81IA9dB+6JbRdX0E3VzCsd3qKpZLpsS8StM7E3JzasaFWXgSf4zpSE\nDnqHNojJwet/sAFzzeXt8NX0kipqOYnv+72JheS9dkqMEapF64agu6L6Ummkek8q\nyjQEKKDrOox6TwB5fZ3K+nYL0QKBgQDPTHQeWDrrtb4R1bVeXeARUXzvDPcuI449\n7vCS4kdmdxKohXZYtzd5014d9DTL1G/GzIH2m4QmlXcrCfzA0fJpuAbQLjIXDZQu\nnOqIITvOWodj3ODCnEr9FiMMzzqYI99k0NYNTgS2kBCV42jEvDKhxDL+r4td6aTp\nLIJiZKQ9YQKBgQCZsS0cuQNGQkAghRlp7/bYswHq58lxP5Z1jLj+HOJeogLefK9v\ni2gBD2U8H/W8f6PAT4lvJ8r3joJdeyCTr4x9cspyjXhBnQwg6DpqYMMdploc57w+\n6ZcxJ47wLn+hS0D1RLpBrjStDgdsa5a1JPnLW5E5WpxDPsJn/pv5JvhbsQKBgFIq\nA3xjjDcQ+h0nj5OvsbgrjFFT2kU3YpG5uzD87z/1wjd5bscLF7n5xTwqJyMDOKqb\nNIgCbAa/B1TPyJbEoEi24DxzkvcAMtOm7m62fXX0++ThD1UTjcVymMHjAV58GXdk\nLvNnEQcrYueGE2inD4p+sZexDJRUn0Csm6FUMqUBAoGBAM8pYBvgHrzU3WBVgaxN\nROr+x/FdGCHE1AFCXQP1EnfzrSHOqsoC5MF1GMmpB0qfmKsaXvwZix4DcxC+WaN/\nWBIPPDuB8hg21JXqNBu5oXFltEwMlCUjhvVPkxM2fJnvI+HNWCH+vkZjuWepWykm\npr1Aa9H8Gcmyg/EqQ2+jup+O\n-----END PRIVATE KEY-----\n",
+  "client_email": "hagavi-auth@hagavi-blog.iam.gserviceaccount.com",
+  "client_id": "116954783637469228296",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hagavi-auth%40hagavi-blog.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

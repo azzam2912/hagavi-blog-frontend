@@ -1,0 +1,37 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
+export default function Login() {
+    const [password, setPassword] = useState("");
+    const [username, setUserName] = useState("");
+    const router = useRouter();
+    const handleBackToHome = () => {
+        router.push("/");
+    }
+    const handleSubmit = () => {
+
+    }
+
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-center">
+            <div className="flex flex-col items-center w-3/4 m-8 p-8">
+                Enter your username and password
+                <form className="flex-row justify-center items-center w-4/5 py-4 space-y-4" onSubmit={handleSubmit}>
+                    <div className="flex items-center justify-center">
+                        <label htmlFor="username" className="sr-only">username</label>
+                        <input value={username} onChange={e => setUserName(e.target.value)} type="text" name="username" id="username" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md text-black p-1" placeholder="password" />
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <label htmlFor="password" className="sr-only">password</label>
+                        <input value={password} onChange={e => setPassword(e.target.value)} type="password" name="password" id="password" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md text-black p-1" placeholder="password" />
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <button type="submit" className="items-center justify-center text-sm w-64 rounded-md shadow py-3 px-2 bg-indigo-100 text-black hover:ring-indigo-500 focus:bg-indigo-300 focus:text-white" >Login</button>
+                    </div>
+                </form>
+                <button className="hover:cursor-pointer hover:bg-slate-700 focus:bg-slate-400" onClick={handleBackToHome}>
+                    back to home
+                </button>
+            </div>
+        </main>
+    )
+}
