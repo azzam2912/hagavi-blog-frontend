@@ -9,24 +9,24 @@ export default function Home() {
   const [posts, setPosts] = useState<string[][]>([])
   const router = useRouter();
   const getAllPostAsync = async () => {
-    // try {
-    //   const response = await fetch(
-    //     '/api/gsheet',
-    //     {
-    //       method: 'GET',
-    //       headers: {
-    //           'Accept': 'application/json',
-    //           'Content-Type': 'application/json'
-    //       },
-    //     });
-    //   if(!response.ok) {
-    //     throw "Error " + response.status;
-    //   }
-    //   const result = await response.json();
-    //   setPosts(result.data.values);
-    // } catch(e) {
-    //   alert("Error " + e);
-    // }
+    try {
+      const response = await fetch(
+        '/api/gsheet',
+        {
+          method: 'GET',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
+        });
+      if(!response.ok) {
+        throw "Error " + response.status;
+      }
+      const result = await response.json();
+      setPosts(result.data.values);
+    } catch(e) {
+      alert("Error " + e);
+    }
   }
   useEffect(() => {
     getAllPostAsync();
