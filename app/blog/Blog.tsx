@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PostCard, { Post } from "../posts/PostCard";
+import PostCard, { Post } from "../../components/ui/PostCard";
 
 interface BlogProps {
   posts: string[][];

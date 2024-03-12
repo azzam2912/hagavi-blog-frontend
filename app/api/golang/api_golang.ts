@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Post } from "../../posts/PostCard";
+import { Post } from "../../../components/ui/PostCard";
 
 const BASE_URL = "http://localhost:8080/"
 

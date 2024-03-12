@@ -1,12 +1,11 @@
-import { useRouter } from "next/router";
+'use client'
+
+import { Button } from "@/components/ui/Button";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 export default function Login() {
     const [password, setPassword] = useState("");
     const [username, setUserName] = useState("");
-    const router = useRouter();
-    const handleBackToHome = () => {
-        router.push("/");
-    }
     const handleSubmit = () => {
 
     }
@@ -18,19 +17,17 @@ export default function Login() {
                 <form className="flex-row justify-center items-center w-4/5 py-4 space-y-4" onSubmit={handleSubmit}>
                     <div className="flex items-center justify-center">
                         <label htmlFor="username" className="sr-only">username</label>
-                        <input value={username} onChange={e => setUserName(e.target.value)} type="text" name="username" id="username" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md text-black p-1" placeholder="password" />
+                        <input value={username} onChange={e => setUserName(e.target.value)} type="text" name="username" id="username" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md text-black p-1" placeholder="username" />
                     </div>
                     <div className="flex items-center justify-center">
                         <label htmlFor="password" className="sr-only">password</label>
                         <input value={password} onChange={e => setPassword(e.target.value)} type="password" name="password" id="password" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md text-black p-1" placeholder="password" />
                     </div>
                     <div className="flex items-center justify-center">
-                        <button type="submit" className="items-center justify-center text-sm w-64 rounded-md shadow py-3 px-2 bg-indigo-100 text-black hover:ring-indigo-500 focus:bg-indigo-300 focus:text-white" >Login</button>
+                        <Button path ="" description="Login"/>
                     </div>
                 </form>
-                <button className="hover:cursor-pointer hover:bg-slate-700 focus:bg-slate-400" onClick={handleBackToHome}>
-                    back to home
-                </button>
+                <Button path="/" description="Back to Home" />
             </div>
         </main>
     )
