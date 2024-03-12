@@ -47,7 +47,7 @@ export default function Home() {
           <div className="text-2xl">This is Hagavi Blog</div>
           <br />
         </div>
-        {/* <Blog posts={posts} /> */}
+        <Blog posts={posts} />
       </div>
     </main>
   );
