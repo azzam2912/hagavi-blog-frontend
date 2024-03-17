@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 
 export interface ButtonInterface {
     path?: string,
-    description: string,
+    children: React.ReactNode
 }
 
 export function Button(props: ButtonInterface) {
@@ -15,7 +15,7 @@ export function Button(props: ButtonInterface) {
     }
     return (
         <button className="p-2 rounded-md border border-white-100" onClick={() => handleClickButton(props.path)}>
-            {props.description}
+            {props.children}
         </button>
     )
 }

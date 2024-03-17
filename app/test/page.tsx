@@ -1,4 +1,4 @@
-import { getUserSession } from '@/lib/session'
+import { getUserSession } from '../../lib/session'
 
 export default async function Test() {
   const user = await getUserSession()

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import PostCard from "../../components/ui/PostCard";
-import Loading from "@/components/ui/LoadingList";
+import Loading from "../../components/ui/LoadingList";
 
 export default function Blog() {
   const [posts, setPosts] = useState<string[][]>([])
@@ -29,7 +29,7 @@ export default function Blog() {
     }
   }
   useEffect(() => {
-    getAllPostAsync();
+    getAllPostAsync()
   },[])
   return (
     <div className="p-2 w-full">

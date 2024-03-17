@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
 const AddPostPage = () => {
     const [title, setTitle] = useState("");
@@ -67,7 +67,7 @@ const AddPostPage = () => {
                         placeholder="Type your content" />
                     </div>
                     <div className="flex items-center justify-center">
-                        <Button description="Add Post!"/>
+                        <Button>Add Post!</Button>
                     </div>
                 </form>
                 <button className="hover:cursor-pointer hover:bg-slate-700 focus:bg-slate-400" onClick={handleBackToHome}>

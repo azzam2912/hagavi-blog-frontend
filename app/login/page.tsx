@@ -1,7 +1,6 @@
 'use client'
 
-import { Button } from "@/components/ui/Button";
-import { useRouter } from "next/navigation";
+import { Button } from "../../components/ui/Button";
 import { useState } from "react";
 export default function Login() {
     const [password, setPassword] = useState("");
@@ -24,10 +23,10 @@ export default function Login() {
                         <input value={password} onChange={e => setPassword(e.target.value)} type="password" name="password" id="password" className="shadow-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-md border-gray-300 rounded-md text-black p-1" placeholder="password" />
                     </div>
                     <div className="flex items-center justify-center">
-                        <Button path ="" description="Login"/>
+                        <Button path ="" >Login</Button>
                     </div>
                 </form>
-                <Button path="/" description="Back to Home" />
+                <Button path="/">Back to Home</Button>
             </div>
         </main>
     )
