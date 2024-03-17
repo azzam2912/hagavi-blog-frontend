@@ -3,14 +3,14 @@
 import { useRouter } from "next/navigation"
 
 export interface ButtonInterface {
-    path: string,
+    path?: string,
     description: string,
 }
 
 export function Button(props: ButtonInterface) {
     const router = useRouter();
-    const handleClickButton = (path: string) => {
-        if(path === "") return
+    const handleClickButton = (path?: string) => {
+        if(!path) return
         router.push(path)
     }
     return (
