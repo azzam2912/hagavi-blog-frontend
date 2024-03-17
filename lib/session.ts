@@ -5,7 +5,7 @@ export const session = ({session, token}: any) => {
     return session
 }
 
-export const getUserSession = async () : Promise<User> => {
+export const getUserSession = async () : Promise<any> => {
     const authUserSession = await getServerSession({
         callbacks: {
             session,

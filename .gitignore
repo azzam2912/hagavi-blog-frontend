@@ -36,5 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # gcloud key
-hagavi-blog-d1e39d026691.json
-hagavi-blog-e3ff46f2518c.json
+hagavi-blog-*.json

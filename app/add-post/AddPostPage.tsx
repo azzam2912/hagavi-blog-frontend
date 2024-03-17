@@ -67,7 +67,7 @@ const AddPostPage = () => {
                         placeholder="Type your content" />
                     </div>
                     <div className="flex items-center justify-center">
-                        <Button>Add Post!</Button>
+                        <Button type="submit">Add Post!</Button>
                     </div>
                 </form>
                 <button className="hover:cursor-pointer hover:bg-slate-700 focus:bg-slate-400" onClick={handleBackToHome}>

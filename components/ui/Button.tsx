@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 
 export interface ButtonInterface {
     path?: string,
+    type?: "button" | "submit" | "reset" | undefined,
     children: React.ReactNode
 }
 
@@ -14,7 +15,7 @@ export function Button(props: ButtonInterface) {
         router.push(path)
     }
     return (
-        <button className="p-2 rounded-md border border-white-100" onClick={() => handleClickButton(props.path)}>
+        <button type={props.type} className="p-2 rounded-md border border-white-100" onClick={() => handleClickButton(props.path)}>
             {props.children}
         </button>
     )

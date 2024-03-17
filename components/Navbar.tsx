@@ -15,9 +15,9 @@ const Navbar = () => {
     const router = useRouter()
 
     return (
-        <div className="flex items-center justify-center cursor-pointer" onClick={() => router.push('/')}>
-            <div className="flex-none">
-                <Image src={Favicon.src} alt="logo" width="60" height="60"/>
+        <div className="flex items-center justify-center">
+            <div className="flex-none cursor-pointer" onClick={() => router.push('/')}>
+                <Image src={Favicon.src} alt="logo" width={60} height={60}/>
             </div>
             <div className="flex-auto sticky top-0 z-50 h-14 backdrop-filter backdrop-blur-md bg-gray-800 bg-opacity-40 flex flex-row p-2 space-x-2 justify-end">
                 { status === "authenticated" ?
@@ -25,7 +25,7 @@ const Navbar = () => {
                         { (session?.user?.role == "hagavi") && 
                             <>
                                 <div className="hidden sm:block">
-                                    <Button path='/add-post'>Add Post!</Button>
+                                    <Button path="/add-post">Add Post!</Button>
                                 </div>
                                 <div className="sm:hidden">
                                     <Button path='/add-post'><Image alt="add post" width={20} height={20} src="/add_box_white_24dp.svg" /></Button>
