@@ -14,7 +14,7 @@ const getAllPostAsync = async (setPosts: Dispatch<SetStateAction<Post[]>>, setLo
         setPosts(data);
         setLoading(false);
     } catch(error) {
-        throw new Error(error?.message);
+        throw new Error("Connection Error");
     }
     return;
 }
