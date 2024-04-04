@@ -24,8 +24,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <NextAuthProvider>
           <Navbar />
+          {children}
         </NextAuthProvider>
-        {children}
       </body>
     </html>
   

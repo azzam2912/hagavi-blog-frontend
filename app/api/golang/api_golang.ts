@@ -1,20 +1,22 @@
 import { Dispatch, SetStateAction } from "react";
 import { Post } from "../../../components/ui/PostCard";
 
-const BASE_URL = "http://localhost:8080/"
+const BASE_URL: string = process.env.NEXT_PUBLIC_GOLANG_API_URL!;
 
-const getAllPostAsync = async (setPosts: Dispatch<SetStateAction<Post[]>>) => {
-try {
-    const response = await fetch(BASE_URL+"post");
-    if(!response.ok) {
-    throw new Error("Response Not OK");
+const getAllPostAsync = async (setPosts: Dispatch<SetStateAction<Post[]>>, setLoading: Dispatch<SetStateAction<boolean>>) => {
+    const url = BASE_URL + "/post";
+    try {
+        const response = await fetch(url);
+        if(!response.ok) {
+            throw new Error(`Response Not OK: ${response.status}`);
+        }
+        const data = await response.json();
+        setPosts(data);
+        setLoading(false);
+    } catch(error) {
+        throw new Error(error?.message);
     }
-    const data = await response.json();
-    setPosts(data);
-} catch(error) {
-    console.log("Error");
     return;
-}
 }
 
 export default getAllPostAsync;

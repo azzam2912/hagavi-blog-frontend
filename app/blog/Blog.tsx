@@ -1,38 +1,19 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import PostCard from "../../components/ui/PostCard";
+import PostCard, { Post } from "../../components/ui/PostCard";
 import Loading from "../../components/ui/LoadingList";
+import getAllPostAsync from "../api/golang/api_golang";
 
 export default function Blog() {
-  const [posts, setPosts] = useState<string[][]>([])
+  const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState<boolean>(true)
-  const getAllPostAsync = async () => {
-    try {
-      const response = await fetch(
-        '/api/gsheet',
-        {
-          method: 'GET',
-          headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-          },
-        });
-      if(!response.ok) {
-        throw "Error " + response.status;
-      }
-      const result = await response.json();
-      setLoading(false)
-      setPosts(result.data.values);
-    } catch(e) {
-      alert("Error " + e);
-    }
-  }
   useEffect(() => {
-    getAllPostAsync()
+    getAllPostAsync(setPosts, setLoading);
+
   },[])
   return (
-    <div className="p-2 w-full">
+    <div className="flex flex-col items-center p-2 w-full">
       {
         loading ? 
           <Loading />
