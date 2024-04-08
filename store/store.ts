@@ -37,7 +37,6 @@ export const usePopUpCardStore = create<PopUpCardState & PopUpCardAction>((set) 
         status: Status.ERROR, 
         duration: 10000,
         action: "",
-        onClickFunction: () => {}
     },
   updatePopUpCard: (popUp) => set(() => ({ popUp: popUp })),
 }));

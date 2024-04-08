@@ -3,7 +3,6 @@ import { SuccessSymbol, ErrorSymbol, WarningSymbol } from "./StatusSymbol";
 import { useToastStore } from "@/store/store";
 import { useEffect } from "react";
 
-
 const Toast = () => {
     const {updateToast, toast } = useToastStore((state) => ({
         updateToast: state.updateToast,

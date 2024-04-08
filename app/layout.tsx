@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Favicon from '/public/favicon.ico'
 import { NextAuthProvider } from "../lib/AuthProvider";
+import Toast from "@/components/ui/Toast/Toast";
+import PopUpCard from "@/components/ui/Toast/PopUpCard";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -94,7 +94,6 @@ export const deletePostByIdAsync = async (id: number) => {
         if(!response.ok) {
             throw new Error(`Response Not OK: ${response.status}`);
         } 
-        console.log("Delete success", response);
         return response
     } catch(error) {
         throw new Error(`Error deleting post`);

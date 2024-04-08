@@ -6,7 +6,6 @@ import { ButtonPrimary, ButtonSecondary } from "../../components/ui/Buttons/Butt
 import { createPostAsync, updatePostByIdAsync } from "../api/golang/api_golang";
 import { CreatePost, Post } from "@/types/post";
 import { useSession } from "next-auth/react";
-import Toast from "@/components/ui/Toast/Toast";
 import { Status } from "@/types/toast";
 import { useToastStore } from "@/store/store";
 
@@ -44,7 +43,6 @@ const AddUpdatePostPage = ({isCreate, post} : {isCreate:boolean, post:Post}) => 
             updateToast({...toast, show: true, message: "Error, cannot add/update post: " + err})
             return;
         }
-        setForm({title: "", content: ""})
     }
     const handleBackToHome = () => {
         router.push("/");
@@ -76,7 +74,6 @@ const AddUpdatePostPage = ({isCreate, post} : {isCreate:boolean, post:Post}) => 
                 </form>
                 <ButtonSecondary onClick={handleBackToHome}>Back to Home</ButtonSecondary>
             </div>
-            <Toast/>
         </main>
     )
 }

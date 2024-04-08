@@ -8,6 +8,8 @@ import Image from "next/image";
 import { UserBox } from "./ui/UserBox";
 import Favicon from '/public/favicon.ico';
 import { useRouter } from "next/navigation";
+import Toast from "./ui/Toast/Toast";
+import PopUpCard from "./ui/Toast/PopUpCard";
 
 const Navbar = () => {
     const { data: session, status} = useSession();
@@ -48,6 +50,8 @@ const Navbar = () => {
                     </>
                 }            
             </div>
+            <PopUpCard />
+            <Toast />
         </nav>
     )
 }

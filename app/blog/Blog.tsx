@@ -10,7 +10,6 @@ import { useSession } from "next-auth/react";
 export default function Blog() {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState<boolean>(true)
-  const { data: session, status} = useSession();
   useEffect(() => {
     const fetchData = async() => {
       const data = await getAllPostAsync();
