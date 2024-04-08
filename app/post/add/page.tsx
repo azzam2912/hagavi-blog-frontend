@@ -1,12 +1,12 @@
-import AddPostPage from "./AddPostPage"
-import Home from "../page"
-import { getUserSession } from "../../lib/session"
+import AddPostPage from "../AddUpdatePostPage"
+import { getUserSession } from "../../../lib/session"
 import { redirect } from "next/navigation"
+import { Post } from "@/types/post"
 
 const AddPost = async() => {
     const sessionUser = await getUserSession()
     if(sessionUser?.role === "hagavi") {
-        return <AddPostPage />;
+        return <AddPostPage isCreate={true} post={{} as Post}/>;
     } else {
         redirect('/')
     }

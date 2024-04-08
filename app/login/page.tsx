@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from "../../components/ui/Button";
+import { Button } from "../../components/ui/Buttons/Button";
 import { useState } from "react";
 export default function Login() {
     const [password, setPassword] = useState("");

@@ -1,14 +1,13 @@
 'use client'
 
 import React, { useState } from "react";
-import { Button } from "./ui/Button";
+import { ButtonPrimary } from "./ui/Buttons/Button";
 import { useSession } from "next-auth/react";
-import GoogleSignInButton from "./ui/GoogleSignInButton";
+import GoogleSignInButton from "./ui/Buttons/GoogleSignInButton";
 import Image from "next/image";
 import { UserBox } from "./ui/UserBox";
 import Favicon from '/public/favicon.ico';
 import { useRouter } from "next/navigation";
-import LightDarkModeButton from "./ui/LightDarkModeButton";
 
 const Navbar = () => {
     const { data: session, status} = useSession();
@@ -26,10 +25,10 @@ const Navbar = () => {
                         { (session?.user?.role == "hagavi") && 
                             <>
                                 <div className="hidden sm:block cursor-pointer">
-                                    <Button path="/add-post">Add Post!</Button>
+                                    <ButtonPrimary path="/post/add">Add Post!</ButtonPrimary>
                                 </div>
                                 <div className="sm:hidden cursor-pointer">
-                                    <Button path='/add-post'><Image alt="add post" className="dark:invert" width={20} height={20} src="/add_FILL0_wght400_GRAD0_opsz24.svg" /></Button>
+                                    <ButtonPrimary path='/post/add'><Image alt="add post" className="dark:invert" width={20} height={20} src="/add_FILL0_wght400_GRAD0_opsz24.svg" /></ButtonPrimary>
                                 </div>
                             </>
                         }
@@ -44,7 +43,7 @@ const Navbar = () => {
                     <>
                         <GoogleSignInButton />
                         <div className="sm:display-block">
-                            <Button path='/login'>Login</Button>
+                            <ButtonPrimary path='/login'>Login</ButtonPrimary>
                         </div>
                     </>
                 }            
