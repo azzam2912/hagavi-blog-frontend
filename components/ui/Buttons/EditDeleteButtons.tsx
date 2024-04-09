@@ -5,6 +5,7 @@ import { useRouter, redirect } from "next/navigation";
 import { usePopUpCardStore, useToastStore } from "@/store/store";
 import PopUpCard from "../Toast/PopUpCard";
 import { Status } from "@/types/toast";
+import { useEffect } from "react";
 
 const EditDeleteButtons = ({postId}:{postId: number}) => {
     const router = useRouter();
@@ -16,24 +17,22 @@ const EditDeleteButtons = ({postId}:{postId: number}) => {
         updateToast: state.updateToast,
         toast: state.toast
     }))
+
+    useEffect(() => {
+        if (!toast.show && toast.status === Status.SUCCESS) {
+            window.location.href = "/"
+        }
+    }, [toast]);
+
     const handleDeletePostAsync = async() => {
         try {
             const response = await deletePostByIdAsync(postId);
             if((response).ok) {
                 updateToast({...toast, show: true, message: "Success deleting file", status: Status.SUCCESS})
-                router.refresh();
                 return
             } else {
                 updateToast({...toast, show: true, message: "Unexpected Error", status: Status.ERROR})
             }
-            // if(!popUp.show) {
-            //     router.refresh();
-            // } else {
-            //     setTimeout(() => {
-            //         router.refresh();
-            //     }, 5000)
-            // }
-            
         } catch(error) {
             updateToast({...toast, show: true, message: "Failed to delete post. Error: " + error, status: Status.ERROR})
         }
@@ -44,7 +43,7 @@ const EditDeleteButtons = ({postId}:{postId: number}) => {
             show: true,
             message: "Are you sure you want to delete this post?",
             action: "Delete",
-            onClickFunction: handleDeletePostAsync()
+            onClickFunction: () => handleDeletePostAsync()
         });
     };
     return (
@@ -57,7 +56,6 @@ const EditDeleteButtons = ({postId}:{postId: number}) => {
                 <Image alt="Edit" className="text-red-500" width={20} height={20} src='/delete_FILL0_wght400_GRAD0_opsz24.svg' />
                 Delete
             </ButtonPrimary>
-            <ButtonPrimary onClick={()=>{}}>REFRESH</ButtonPrimary>
         </div>
         )
 }

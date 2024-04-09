@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { CreatePost, Post } from "@/types/post";
 import { json } from "stream/consumers";
 
-const BASE_URL: string = process.env.NEXT_PUBLIC_GOLANG_API_URL_LOCAL!;
+const BASE_URL: string = process.env.NEXT_PUBLIC_GOLANG_API_URL!;
 
 export const getAllPostAsync = async () => {
     const url = `${BASE_URL}/post`;
